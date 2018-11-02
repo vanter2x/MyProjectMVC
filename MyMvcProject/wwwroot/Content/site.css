@@ -4,3 +4,8 @@
     background-image: url('/images/bg-masthead.jpg');
     background-repeat: repeat;
 }
+
+.title-class {
+    background-color:grey;
+    font: bold;
+}

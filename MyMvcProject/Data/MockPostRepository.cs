@@ -41,5 +41,20 @@ namespace MyMvcProject.Data
         {
             return posts.FirstOrDefault(p => p.Id == id);
         }
+
+        public void CreatePost(Post post)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdatePost(Post post)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeletePost(Post post)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

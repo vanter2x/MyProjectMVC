@@ -26,3 +26,6 @@ C:\Project\MyProjectMVC\MyMvcProject\obj\Debug\netcoreapp2.1\Razor\Views\Home\In
 C:\Project\MyProjectMVC\MyMvcProject\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
 C:\Project\MyProjectMVC\MyMvcProject\obj\Debug\netcoreapp2.1\Razor\Views\Blog\Index.g.cshtml.cs
 C:\Project\MyProjectMVC\MyMvcProject\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+C:\Project\MyProjectMVC\MyMvcProject\obj\Debug\netcoreapp2.1\Razor\Views\Account\Login.g.cshtml.cs
+C:\Project\MyProjectMVC\MyMvcProject\obj\Debug\netcoreapp2.1\Razor\Views\Account\Register.g.cshtml.cs
+C:\Project\MyProjectMVC\MyMvcProject\obj\Debug\netcoreapp2.1\Razor\Views\Blog\EditPost.g.cshtml.cs
