@@ -9,3 +9,24 @@
     background-color:grey;
     font: bold;
 }
+
+footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:60px;			/* Height of the footer */
+    background:#6cf;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: table;
+}
+
+footer {
+    background-color: grey;
+    display: table-row;
+    height: 0;
+}
