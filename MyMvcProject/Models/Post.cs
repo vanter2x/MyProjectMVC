@@ -13,9 +13,8 @@ namespace MyMvcProject.Models
         {
         }
 
-        public Post(int id, string title, string postText, DateTime postDate)
+        public Post(string title, string postText, DateTime postDate)
         {
-            Id = id;
             Title = title;
             PostText = postText;
             PostDate = postDate;

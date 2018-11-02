@@ -8,35 +8,23 @@
     <title>WyMvcProject</title>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-controller="Home" asp-action="Index" class="navbar-brand">Komis</a></li>
-                    <li><a asp-controller="Opinion" asp-action="Index" class="navbar-brand">Opinia</a></li>
-                </ul>
-
-                @if (SignInManager.IsSignedIn(User))
-                {
-                    <form asp-area="" asp-controller="Account" asp-action="Logout" id="logoutForm" method="post" class="navbar-right">
-                        <ul class="nav navbar-nav navbar=right">
-                            <li><a href="javascript:document.getElementById('logoutForm').submit()">Wyloguj</a></li>
-                        </ul>
-                    </form>
-                }
-                else
-                {
-                    <ul class="nav navbar-nav">
-                        <li><a id="registerLink" asp-controller="Account" asp-action="Register" class="navbar-brand">Rejestracja</a></li>
-                        <li><a id="loginLink" asp-controller="Account" asp-action="Login" class="navbar-brand">Zaloguj</a></li>
-                    </ul>
-                }
-            </div>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a asp-controller="Home" asp-action="Index" class="navbar-brand">Start</a></li>
+                <li><a asp-controller="Blog" asp-action="Index" class="navbar-brand">Blog</a></li>
+                <li><a asp-controller="Contact" asp-action="Index" class="navbar-brand">Kontakt</a></li>
+                <li><a asp-controller="Blog" asp-action="EditBlog" class="navbar-brand">Edycja</a></li>
+                <li><a asp-controller="Opinion" asp-action="Index" class="navbar-brand">Zaloguj</a></li>
+            </ul>
         </div>
-    </nav>
-
-    <div>
+    </div>
+</nav>
+<div class="container body-content">
+    <div class="row">
         @RenderBody()
     </div>
+</div>
 </body>
 </html>
