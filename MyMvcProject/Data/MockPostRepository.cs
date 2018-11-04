@@ -8,7 +8,7 @@ namespace MyMvcProject.Data
     public class MockPostRepository : IPostRepository
     {
 
-        private List<Post> posts;
+        private List<PostDTO> posts;
 
         public MockPostRepository()
         {
@@ -20,39 +20,39 @@ namespace MyMvcProject.Data
 
         private void AddPosts()
         {
-            posts = new List<Post>()
+            posts = new List<PostDTO>()
             {
-                new Post("Tytul1","sadsadasd asd safd asd asd a dasd asd d asd asd asd assf ag ",new DateTime(2018,8,8,12,22,2)),
-                new Post("Dwa","hgjgfhd a dasd asd d asd asd asd assf ag ",new DateTime(2018,8,12,12,22,2)),
-                new Post("Trzy","sfgvnbvbnvbnvbn asd asd a dasd asd d asd asd asd assf ag ",new DateTime(2018,8,14,12,22,2)),
-                new Post("Cztery","ppopiuuyiyuoyuoyuioiuasd asd d asd asd asd assf ag ",new DateTime(2018,8,22,12,22,2)),
-                new Post("Pięć","6556jhggd asd a dasd asd d asd asd asd assf ag ",new DateTime(2018,8,28,12,22,2)),
-                new Post("Sześć","097678ghnn6n65d asd asd assf ag ",new DateTime(2018,9,8,12,22,2)),
-                new Post("Siedem","qweqweqeqweqewd a dasd asd d asd asd asd assf ag ",new DateTime(2018,9,9,12,22,2))
+                new PostDTO("Tytul1","sadsadasd asd safd asd asd a dasd asd d asd asd asd assf ag ",new DateTime(2018,8,8,12,22,2),new DateTime(2018,8,8,12,22,2)),
+                new PostDTO("Dwa","hgjgfhd a dasd asd d asd asd asd assf ag ",new DateTime(2018,8,12,12,22,2),new DateTime(2018,8,8,12,22,2)),
+                new PostDTO("Trzy","sfgvnbvbnvbnvbn asd asd a dasd asd d asd asd asd assf ag ",new DateTime(2018,8,14,12,22,2),new DateTime(2018,8,8,12,22,2)),
+                new PostDTO("Cztery","ppopiuuyiyuoyuoyuioiuasd asd d asd asd asd assf ag ",new DateTime(2018,8,22,12,22,2),new DateTime(2018,8,8,12,22,2)),
+                new PostDTO("Pięć","6556jhggd asd a dasd asd d asd asd asd assf ag ",new DateTime(2018,8,28,12,22,2),new DateTime(2018,8,8,12,22,2)),
+                new PostDTO("Sześć","097678ghnn6n65d asd asd assf ag ",new DateTime(2018,9,8,12,22,2),new DateTime(2018,8,8,12,22,2)),
+                new PostDTO("Siedem","qweqweqeqweqewd a dasd asd d asd asd asd assf ag ",new DateTime(2018,9,9,12,22,2),new DateTime(2018,8,8,12,22,2))
             };
         }
 
-        public IEnumerable<Post> GetAllPosts()
+        public IEnumerable<PostDTO> GetAllPosts()
         {
             return posts;
         }
 
-        public Post GetPost(int id)
+        public PostDTO GetPost(int id)
         {
             return posts.FirstOrDefault(p => p.Id == id);
         }
 
-        public void CreatePost(Post post)
+        public void CreatePost(PostDTO post)
         {
             throw new NotImplementedException();
         }
 
-        public void UpdatePost(Post post)
+        public void UpdatePost(PostDTO post)
         {
             throw new NotImplementedException();
         }
 
-        public void DeletePost(Post post)
+        public void DeletePost(PostDTO post)
         {
             throw new NotImplementedException();
         }

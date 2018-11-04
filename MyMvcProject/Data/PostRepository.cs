@@ -14,29 +14,29 @@ namespace MyMvcProject.Data
             _appDbContext = appDbContext;
         }
 
-        public IEnumerable<Post> GetAllPosts()
+        public IEnumerable<PostDTO> GetAllPosts()
         {
             return _appDbContext.Posts;
         }
 
-        public Post GetPost(int id)
+        public PostDTO GetPost(int id)
         {
             return _appDbContext.Posts.FirstOrDefault(p => p.Id == id);
         }
 
-        public void CreatePost(Post post)
+        public void CreatePost(PostDTO post)
         {
             _appDbContext.Add(post);
             _appDbContext.SaveChanges();
         }
 
-        public void UpdatePost(Post post)
+        public void UpdatePost(PostDTO post)
         {
             _appDbContext.Update(post);
             _appDbContext.SaveChanges();
         }
 
-        public void DeletePost(Post post)
+        public void DeletePost(PostDTO post)
         {
             _appDbContext.Remove(post);
             _appDbContext.SaveChanges();

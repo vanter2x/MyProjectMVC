@@ -11,6 +11,6 @@ namespace MyMvcProject.Data
         {
         }
 
-        public DbSet<Post> Posts { get; set; }
+        public DbSet<PostDTO> Posts { get; set; }
     }
 }

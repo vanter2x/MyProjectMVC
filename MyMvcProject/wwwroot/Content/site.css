@@ -25,6 +25,16 @@ body {
     text-align: center;
 }
 .footer p {
-    padding-top: auto;
     text-align: center;
+}
+
+.list-post-container
+{
+    float:right;
+    padding:3px; 
+}
+
+.list-post {
+    overflow: auto;
+    height: 400px;
 }

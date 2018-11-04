@@ -5,10 +5,10 @@ namespace MyMvcProject.Data
 {
     public interface IPostRepository
     {
-        IEnumerable<Post> GetAllPosts();
-        Post GetPost(int id);
-        void CreatePost(Post post);
-        void UpdatePost(Post post);
-        void DeletePost(Post post);
+        IEnumerable<PostDTO> GetAllPosts();
+        PostDTO GetPost(int id);
+        void CreatePost(PostDTO post);
+        void UpdatePost(PostDTO post);
+        void DeletePost(PostDTO post);
     }
 }

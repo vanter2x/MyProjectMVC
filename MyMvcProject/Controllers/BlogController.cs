@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using MyMvcProject.Data;
+using MyMvcProject.DataMapper;
 using MyMvcProject.Models;
+using MyMvcProject.ViewModels;
 
 namespace MyMvcProject.Controllers
 {
@@ -17,7 +20,19 @@ namespace MyMvcProject.Controllers
 
         public IActionResult Index()
         {
-            var posts = _postRepository.GetAllPosts().OrderByDescending(p => p.PostDate);
+            List<PostVM> posts;
+            posts = _postRepository.GetAllPosts().OrderByDescending(p => p.PostDate)
+                                   .Take(3).Select(p => new PostVM(p)).ToList();
+
+            if (posts == null)
+                return NotFound();
+
+            return View(posts);
+        }
+
+        public IActionResult PostList()
+        {
+            var posts = _postRepository.GetAllPosts().OrderByDescending(p => p.PostDate).Select(p => new PostVM(p)).ToList();
 
             if (posts == null)
                 return NotFound();
@@ -32,20 +47,22 @@ namespace MyMvcProject.Controllers
             if (post == null)
                 return NotFound();
 
-            return View(post);
+            return View(post.MapDTOtoVM());
         }
 
         [HttpPost]
-        public IActionResult EditPost(Post post)
+        public IActionResult EditPost(PostVM post)
         {
             if (ModelState.IsValid)
             {
-                post.PostDate = DateTime.Now;
-                _postRepository.UpdatePost(post);
+                post.PostEditDate = DateTime.Now;
+                _postRepository.UpdatePost(post.MapVMtoDTO());
                 return RedirectToAction("Index");
             }
 
             return View(post);
         }
+
+        
     }
 }

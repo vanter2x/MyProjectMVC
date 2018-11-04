@@ -180,13 +180,15 @@ namespace MyMvcProject.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("MyMvcProject.Models.Post", b =>
+            modelBuilder.Entity("MyMvcProject.Models.PostDTO", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("PostDate");
+
+                    b.Property<DateTime>("PostEditDate");
 
                     b.Property<string>("PostText");
 
