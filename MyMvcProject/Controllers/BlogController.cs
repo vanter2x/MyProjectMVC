@@ -63,6 +63,14 @@ namespace MyMvcProject.Controllers
             return View(post);
         }
 
-        
+        public IActionResult Details(int id)
+        {
+            var post = _postRepository.GetPost(id);
+
+            if (post == null)
+                return NotFound();
+
+            return View(post.MapDTOtoVM());
+        }
     }
 }

@@ -7,29 +7,28 @@
     <link rel="stylesheet" href="~/Content/site.css" />
 </head>
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li><a asp-controller="Home" asp-action="Index" class="navbar-brand">Start</a></li>
-                <li><a asp-controller="Blog" asp-action="Index" class="navbar-brand">Blog</a></li>
-                <li><a asp-controller="Contact" asp-action="Index" class="navbar-brand">Kontakt</a></li>
-                <li><a asp-controller="Blog" asp-action="PostList" class="navbar-brand">Edycja</a></li>
-                <li><a asp-controller="Opinion" asp-action="Index" class="navbar-brand">Zaloguj</a></li>
-            </ul>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a asp-controller="Home" asp-action="Index" class="navbar-brand">Start</a></li>
+                    <li><a asp-controller="Blog" asp-action="Index" class="navbar-brand">Blog</a></li>
+                    <li><a asp-controller="Contact" asp-action="Index" class="navbar-brand">Kontakt</a></li>
+                    <li><a asp-controller="Blog" asp-action="PostList" class="navbar-brand">Edycja</a></li>
+                    <li><a asp-controller="Opinion" asp-action="Index" class="navbar-brand">Zaloguj</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
-<div class="container body-content">
-    <div class="row">
-        @RenderBody()
-    </div>
-    
-    <footer class="footer">
-        <p style="text-align:center">&copy; @DateTime.Now.Year - Sławomir Kowal</p>
-    </footer>
-</div>
+    </nav>
+    <div class="container body-content">
+        <div class="row">
+            @RenderBody()
+        </div>
 
-
+        <footer class="footer">
+            <p style="text-align:center">&copy; @DateTime.Now.Year - Sławomir Kowal</p>
+        </footer>
+    </div>
 </body>
 </html>
+
