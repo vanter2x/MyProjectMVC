@@ -4,7 +4,6 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using MyMvcProject.Data;
 using MyMvcProject.DataMapper;
-using MyMvcProject.Models;
 using MyMvcProject.ViewModels;
 
 namespace MyMvcProject.Controllers
