@@ -18,7 +18,6 @@
                     <li><a asp-controller="Home" asp-action="Index" class="navbar-brand">Start</a></li>
                     <li><a asp-controller="Blog" asp-action="Index" class="navbar-brand">Blog</a></li>
                     <li><a asp-controller="Contact" asp-action="Index" class="navbar-brand">Kontakt</a></li>
-
                 </ul>
                 @if (SignInManager.IsSignedIn(User))
                 {
@@ -41,14 +40,11 @@
                         }
                     </ul>
                 }
-
             </div>
         </div>
     </nav>
     <div class="container body-content">
         @RenderBody()
-
-
         <footer class="footer">
             <p style="text-align:center">&copy; @DateTime.Now.Year - Sławomir Kowal</p>
         </footer>
