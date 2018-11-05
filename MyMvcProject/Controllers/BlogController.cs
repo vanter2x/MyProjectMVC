@@ -72,5 +72,24 @@ namespace MyMvcProject.Controllers
 
             return View(post.MapDTOtoVM());
         }
+
+        public IActionResult DeletePost(int id)
+        {
+            var post = _postRepository.GetPost(id);
+
+            if (post == null)
+                return NotFound();
+
+            return View(post.MapDTOtoVM());
+        }
+
+        [HttpPost, ActionName("DeletePost")]
+        public IActionResult DeletePostConfirmed(int id)
+        {
+            var post = _postRepository.GetPost(id);
+            _postRepository.DeletePost(post);
+
+            return RedirectToAction("PostList");
+        }
     }
 }

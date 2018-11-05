@@ -1,12 +1,6 @@
 ﻿@model PostVM
 
-<div class="col-md-12 text-right img-rounded ">
-    <div class="panel panel-default">
-        <div class="panel-heading text-left">@Model.Title</div>
-        <div class="panel-body text-left">@Html.Raw(Model.PostText)</div>
-        <div class="panel-footer">
-            <a asp-action="Index" class="btn btn-default">Powrót</a>
-        </div>
-    </div>
-    <br />
+<partial name="_PostDetail" />
+<div >
+    <a asp-action="Index" class=" btn btn-default">Powrót</a>
 </div>
