@@ -90,5 +90,24 @@ namespace MyMvcProject.Controllers
 
             return RedirectToAction("PostList");
         }
+
+        public IActionResult CreatePost()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CreatePost(PostVM postVM)
+        {
+            if (ModelState.IsValid)
+            {
+                postVM.PostDate = DateTime.Now;
+                postVM.PostEditDate = DateTime.Now;
+                _postRepository.CreatePost(postVM.MapVMtoDTO());
+                return RedirectToAction("Index");
+            }
+
+            return View(postVM);
+        }
     }
 }

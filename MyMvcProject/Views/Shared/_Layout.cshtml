@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -13,16 +17,37 @@
                 <ul class="nav navbar-nav">
                     <li><a asp-controller="Home" asp-action="Index" class="navbar-brand">Start</a></li>
                     <li><a asp-controller="Blog" asp-action="Index" class="navbar-brand">Blog</a></li>
-                    <li><a asp-controller="Blog" asp-action="PostList" class="navbar-brand">Edycja</a></li>
-                    @*<li><a asp-controller="Contact" asp-action="Index" class="navbar-brand">Kontakt</a></li>
-                    <li><a asp-controller="Opinion" asp-action="Index" class="navbar-brand">Zaloguj</a></li>*@
+                    <li><a asp-controller="Contact" asp-action="Index" class="navbar-brand">Kontakt</a></li>
+
                 </ul>
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <ul class="nav navbar-nav">
+                        <li><a asp-controller="Blog" asp-action="PostList" class="navbar-brand">Edycja</a></li>
+                    </ul>
+                    <form asp-area="" asp-controller="Account" asp-action="Logout" id="logoutForm" method="post" class="navbar-right">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="javascript:document.getElementById('logoutForm').submit()">Wyloguj</a></li>
+                        </ul>
+                    </form>
+                }
+                else
+                {
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a asp-controller="Account" asp-action="Login" class="navbar-brand">Zaloguj</a></li>
+                        @if (!UserManager.Users.Any())
+                        {
+                            <li><a asp-controller="Account" asp-action="Register" class="navbar-brand">Rejestruj</a></li>
+                        }
+                    </ul>
+                }
+
             </div>
         </div>
     </nav>
     <div class="container body-content">
-            @RenderBody()
-        
+        @RenderBody()
+
 
         <footer class="footer">
             <p style="text-align:center">&copy; @DateTime.Now.Year - Sławomir Kowal</p>
